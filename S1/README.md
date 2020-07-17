@@ -22,6 +22,6 @@ curl --location --request POST 'https://2fmno3fn46.execute-api.ap-south-1.amazon
 
 ## Screen shot
 
-![alt screen-shot](https://github.com/raguram/Eva4P2/blob/master/MobileNetV2Service/output-screenshot.png)
+![alt screen-shot](https://github.com/raguram/Eva4P2/blob/master/S1/MobileNetV2Service/output-screenshot.png)
 
 
