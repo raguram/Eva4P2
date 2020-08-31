@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>EVA-4-P2</title>
+	</head>
+	<body>
+		<div>
+			<div>
+				<h1>Face Application</h1>
+			</div>
+			<div>
+				<h3>Face Align</h3>
+			</div>
+			<div>
+				<label for="face">Please choose a file with the face to align</label>
+				<input type="file" id="faceAlignUpload">
+			</div>
+			<br>
+			<div> 
+				<input type="button" id="faceAlign" onclick="performFaceAlign('https://ovxudlsox3.execute-api.ap-south-1.amazonaws.com/dev/align')" class="button" value="Align Face"/>
+			</div>
+			<br>
+			<br>
+			<div>
+				<img id="faceAlignResult"/>
+			</div>
+
+			<br>
+			
+			<div>
+				<h3>Face Swap</h3>
+			</div>
+			<div>
+				<label for="face">Please choose a files with faces</label>
+				<input type="file" id="faceSwapUpload1">
+				<input type="file" id="faceSwapUpload2">
+			</div>
+			<br>
+			<div> 
+				<input type="button" id="faceAlign" onclick="performFaceSwap('https://ovxudlsox3.execute-api.ap-south-1.amazonaws.com/dev/swap')" class="button" value="Swap Faces"/>
+			</div>
+			<br>
+			<br>
+			<div>
+				<img id="faceSwapResult"/>
+			</div>			
+		</div>
+	</body>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/faceApp.js"></script>
+	<script src="js/faceSwap.js"></script>
+</html>

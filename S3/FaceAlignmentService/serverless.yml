@@ -1,0 +1,64 @@
+service: FaceAlignmentService
+
+provider:
+  name: aws
+  runtime: python3.8
+  stage: dev
+  region: ap-south-1
+  timeout: 30
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "s3:getObject"
+      Resource: arn:aws:s3:::e4p2-models-ragu/*
+
+custom:
+  pythonRequirements:
+    dockerizePip: true
+    zip: true
+    slim: true
+    strip: false
+    noDeploy:
+      - docutils
+      - jmespath
+      - pip
+      - python-dateutil
+      - setuptools
+      - six
+      - tensorboard
+    useStatiCache: true
+    useDownloadCache: true
+    cacheLocation: "./cache"
+
+package:
+  individually: false
+  exclude:
+    - package.json
+    - package-log.json
+    - node_modules/**
+    - cache/**
+    - test/**
+    - __pycache__/**
+    - .pytest_cache/**
+
+functions:
+  align_face:
+    handler: src.face_align_handler.align_face
+    memory: 3008
+    timeout: 30
+    events:
+      - http:
+          path: align
+          method: post
+          cors: true
+  swap_faces:
+    handler: src.face_swap_handler.swap_faces
+    memory: 3008
+    timeout: 30
+    events:
+      - http:
+          path: swap
+          method: post
+          cors: true
+plugins:
+  - serverless-python-requirements

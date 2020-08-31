@@ -1,0 +1,8 @@
+**/*pycache*
+**/.DS_Store
+**/.idea
+**/.serverless
+**/cache
+**/node_modules
+**/.requirements.zip
+**/package-lock.json
