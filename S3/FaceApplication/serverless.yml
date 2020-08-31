@@ -1,4 +1,4 @@
-service: FaceAlignmentService
+service: FaceApplication
 
 provider:
   name: aws
