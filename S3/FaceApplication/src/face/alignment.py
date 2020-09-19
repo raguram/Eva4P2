@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-from src.face import utils
+from face import utils
 from PIL import Image
 
 

@@ -1,5 +1,5 @@
-from src.face import alignment
-from src.face import detector
+from face import alignment
+from face import detector
 import argparse
 import os
 import cv2
