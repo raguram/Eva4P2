@@ -23,7 +23,7 @@ if __name__ == "__main__":
 
     for folder in os.listdir(args.input_folder):
 
-        if folder == ".DS_Store":
+        if folder == ".DS_Store" or not os.path.isdir(join(args.input_folder, folder)):
             continue
 
         print(f"Processing folder {folder}")
@@ -37,7 +37,7 @@ if __name__ == "__main__":
             if im_file_name == ".DS_Store":
                 continue
 
-            print(f"Aligning image {im_file_name}")
+            # print(f"Aligning image {im_file_name}")
             im_file_path = join(in_im_folder, im_file_name)
             out_file_path = join(out_im_folder, im_file_name)
 
@@ -51,4 +51,4 @@ if __name__ == "__main__":
 
             im_out, _ = alignment.normalize_images_landmarks(im, (args.h, args.w), landmarks[0])
             im_out.save(out_file_path)
-            print(f"Aligning image {im_file_name} completed")
+            # print(f"Aligning image {im_file_name} completed")

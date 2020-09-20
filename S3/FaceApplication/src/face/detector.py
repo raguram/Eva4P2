@@ -4,7 +4,7 @@ import dlib
 def detect(im):
     face_detector = dlib.get_frontal_face_detector()
     face_rects = face_detector(im, 0)
-    print("Number of faces detected: ", len(face_rects))
+    # print("Number of faces detected: ", len(face_rects))
     return face_rects
 
 
@@ -20,7 +20,7 @@ def predict_face_landmarks(im, predictor_path, face_rects=None):
                                    int(rect.right()),
                                    int(rect.bottom()))
         landmarks = landmark_detector(im, dlib_rect)
-        print("Number of landmarks", len(landmarks.parts()))
+        # print("Number of landmarks", len(landmarks.parts()))
 
         all_landmarks.append(landmarks)
     return all_landmarks
